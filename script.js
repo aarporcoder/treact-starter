@@ -7,8 +7,16 @@ function closeMenu() {
 }
 
 function toggleFaq(button) {
-    const faqItem = button.parentElement;
-    faqItem.classList.toggle("faq--open");
+    const clickedItem = button.parentElement;
+    const allFaqs = document.querySelectorAll(".faq");
+    
+    allFaqs.forEach((item) => {
+        if (item !== clickedItem) {
+            item.classList.remove("faq--open");
+        }
+    });
+    
+    clickedItem.classList.toggle("faq--open");
 }
 
 const testimonials = [
